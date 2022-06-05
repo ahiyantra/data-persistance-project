@@ -12,13 +12,13 @@ public class MainManager : MonoBehaviour
 
     public Text ScoreText;
     public GameObject GameOverText;
+    public Button Return;
     
-    private bool m_Started = false;
-    private int m_Points;
+    public bool m_Started = false; //private
+    public int m_Points; //private
     
-    private bool m_GameOver = false;
+    public bool m_GameOver = false; //private
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -72,5 +72,8 @@ public class MainManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        Return.gameObject.SetActive(true);
+
+        NewMainManager.Instance.n_Points = m_Points;
     }
 }
